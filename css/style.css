@@ -1,0 +1,31 @@
+@width-all: 1280px;
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	height: 100%;
+	font-family: "Montserrat", sans-serif;
+}
+
+.conteiner {
+	max-width: 1280px;
+	min-width: 400px;
+	min-height: 323px;
+	margin: 0 auto;
+	min-height: 100%;
+}
+
+.clearfix::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.padding-side {
+	padding-left: 50px;
+	padding-right: 50px;
+}
