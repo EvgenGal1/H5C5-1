@@ -1,232 +1,406 @@
-/* ! Разобраться с этой ошибкой
-@width-all: 1280px;
-*/
+@font-face {
+  font-family: SocialIco;
+  src: url("../font/Socialico.ttf");
+}
 * {
   margin: 0;
   padding: 0;
 }
 html,
 body {
+  background: #ccc;
   height: 100%;
   font-family: Arial, sans-serif;
 }
-
-/*
-@font-face {  
-	font-family: Social;
-	scr: url(Social.ttf);
-}
-*/
-
 .conteiner {
   max-width: 1280px;
   margin: 0 auto;
-  /*
-	min-width: 400px;
-	min-height: 323px;
-	min-height: 100%;
-	*/
 }
-.clearfix::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.padding-side {
+.prod {
+  background-color: #445161;
   padding: 50px;
 }
-.Prod {
-  background-color: #445161;
-  padding-top: 50px;
+.prod:after {
+  content: "";
+  clear: both;
+  display: block;
 }
-.Prod .Prod_text {
+.prod .prod_text {
   display: inline-block;
-  text-shadow: 2px 2px 0 #000000;
-  font-weight: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: left;
+  text-shadow: 0.5px 0.9px 0 rgba(0, 0, 0, 0.3);
   color: #fff;
+  width: 55%;
 }
-.Prod .Prod_text h1 {
-  width: 367px;
-  height: 44px;
-  font-weight: 100;
-  font-size: 58px;
+.prod .prod_text h1 {
+  font-weight: 400;
+  font-size: 60px;
 }
-.Prod .Prod_text ul {
-  float: left;
-  list-style: inside url(/img/ulli.png);
-  padding-left: 0;
-  margin-top: 50px;
+.prod .prod_text ul {
+  list-style: inside url(../img/check_icon.png);
+  margin-top: 28px;
   font-size: 20px;
   line-height: 36px;
 }
-.Prod img {
+.prod img {
   float: right;
-  width: 469px;
-  height: 214px;
-  background-color: #ffffff;
 }
-.Abo {
-  width: 1180px;
-  height: 245px;
-  display: inline-block;
+.abo {
+  background-color: #fff;
+  padding: 50px;
 }
-.Abo .Abo_text {
-  width: 655px;
+.abo:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.abo .abo_text {
+  max-width: 710px;
   float: left;
-  font-size: 30px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  letter-spacing: normal;
-  text-align: left;
 }
-.Abo .Abo_text h2 {
-  font-weight: 100;
-  font-size: 30px;
-  line-height: 1.2;
+.abo .abo_text h2 {
   color: #445161;
-  margin-bottom: 10px;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 36px;
+  margin: 0 0 30px;
 }
-.Abo .Abo_text p {
+.abo .abo_text p {
   font-size: 16px;
-  line-height: 1.5;
-  color: #333333;
+  line-height: 24px;
+  color: #445161;
   margin-top: 20px;
 }
-.Abo img {
+.abo img {
   float: right;
   width: 430px;
   height: 245px;
   background-color: #445161;
 }
-.Dig {
-  width: 1180px;
-  height: 316px;
+.dig {
+  padding: 50px;
   background-color: #f5f5f5;
 }
-.Dig h2 {
-  /*width: 351px;*/
-  /*height: 28px;*/
-  font-size: 30px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: normal;
-  text-align: center;
+.dig:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.dig h2 {
   color: #445161;
-  margin-bottom: 15px;
-}
-.Dig li {
-  list-style-image: url(/img/ulli.png);
-  padding-inline-start: 10px;
-  float: left;
-  width: 526px;
-  height: 63px;
-  font-size: 14px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: normal;
-  text-align: left;
-  color: #333333;
-  margin: 17px 17px 0 0;
-}
-.Scr {
-  display: inline-block;
-  width: 1180px;
-  height: 387px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  letter-spacing: normal;
-  text-align: left;
-}
-.Scr h2 {
   font-size: 30px;
-  line-height: 1.2;
-  color: #445161;
-  margin-bottom: 15px;
+  font-weight: 400;
+  line-height: 36px;
+  margin: 0 0 30px;
   text-align: center;
 }
-.Scr section {
-  float: left;
-}
-.Scr section :nth-child(2n+1) {
-  margin: 15px 15px 0 0;
-}
-.Scr img {
-  width: 200px;
-  height: 150px;
-  background-color: #445161;
-  float: left;
-}
-.Scr h3 {
-  font-size: 24px;
-  line-height: 1.25;
+.dig ul {
+  list-style: none;
   color: #445161;
-}
-.Scr p {
-  width: 553px;
   font-size: 16px;
-  line-height: 1.5;
-  color: #333333;
+  line-height: 24px;
 }
-.Rev {
-  display: inline-block;
-  width: 1180px;
-  height: 324px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  letter-spacing: normal;
-  text-align: left;
+.dig ul:after {
+  content: "";
+  clear: both;
+  display: block;
 }
-.Rev h2 {
-  font-size: 30px;
-  line-height: 1.2;
+.dig li {
+  width: calc(50% - 8px);
+  float: left;
+  background: url(../img/plus_icon.gif) no-repeat left 5px;
+  padding-left: 40px;
+  box-sizing: border-box;
+  text-align: justify;
+  margin-top: 35px;
+}
+.dig li:nth-child(-n + 2) {
+  margin-top: 0;
+}
+.dig li:nth-child(odd) {
+  margin-right: 8px;
+}
+.dig li:nth-child(even) {
+  margin-left: 8px;
+}
+.scr {
+  background: #fff;
+  padding: 50px;
+}
+.scr:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.scr h2 {
   color: #445161;
-  margin-bottom: 15px;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 36px;
+  margin: 0 0 30px;
   text-align: center;
 }
-.Rev section {
+.scr .scr_cont {
+  color: #445161;
+  width: calc(50% - 8px);
   float: left;
 }
-.Rev section :nth-child(2n+1) {
-  margin: 15px 15px 0 0;
+.scr .scr_cont:nth-of-type(n + 3) {
+  margin-top: 30px;
 }
-.Rev img {
-  width: 200px;
-  height: 150px;
-  background-color: #445161;
+.scr .scr_cont:nth-of-type(odd) {
+  margin-right: 8px;
+}
+.scr .scr_cont:nth-of-type(even) {
+  margin-left: 8px;
+}
+.scr .scr_cont img {
+  float: left;
+  margin-right: 15px;
+}
+.scr .scr_cont h3 {
+  font-size: 24px;
+  line-height: 30px;
+}
+.scr .scr_cont div {
+  font-size: 16px;
+  line-height: 24px;
+  text-align: justify;
+}
+.rev {
+  padding: 50px;
+  background: #f5f5f5;
+}
+.rev:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.rev h2 {
+  color: #445161;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 36px;
+  margin: 0 0 30px;
+  text-align: center;
+}
+.rev .rev_cont {
+  width: calc(50% - 8px);
   float: left;
 }
-.Rev p {
-  width: 553px;
+.rev .rev_cont:nth-of-type(odd) {
+  margin-right: 8px;
+}
+.rev .rev_cont:nth-of-type(even) {
+  margin-left: 8px;
+}
+.rev .rev_cont:nth-of-type(n + 3) {
+  margin-top: 20px;
+}
+.rev .rev_cont Img {
+  border-radius: 50%;
+  float: left;
+}
+.rev .rev_cont .rev_text {
   font-size: 14px;
   font-style: italic;
-  line-height: 1.29;
-  color: #333333;
+  line-height: 18px;
+  color: #445161;
+  background-color: #ebebeb;
+  position: relative;
+  float: right;
+  width: 468px;
+  padding: 16px;
+  box-sizing: border-box;
+  border-radius: 4px;
 }
-.Rev p после br {
+.rev .rev_cont .rev_text::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: -10px;
+  top: 27px;
+  background: #ebebeb;
+  transform: rotate(45deg);
+}
+.rev .rev_cont .rev_text .rev_Author {
   color: #989898;
+  font-size: 14px;
+  line-height: 18px;
 }
-/*
-#445161
-#333333
-#445162
-#989898
-
-color="#445161"
-color="#f5f5f5"
-color="#ebebeb"
-color="#445161"
-
-color="#f5f5f5"
-color="#ebebeb"
-*/
+.buyItNow {
+  background-color: #fff;
+  padding: 50px;
+}
+.buyItNow:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.buyItNow h2 {
+  color: #445161;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 36px;
+  margin: 0 0 30px;
+  text-align: center;
+}
+.buyItNow .buy_conts {
+  width: 990px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.buyItNow .buy_conts .buy_cont {
+  width: 298px;
+  background: #445161;
+  border-radius: 4px;
+  border: 2px solid #445161;
+}
+.buyItNow .buy_conts .buy_cont h2 {
+  padding: 17px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 30px;
+  margin: 0;
+}
+.buyItNow .buy_conts .buy_cont .buy_pri {
+  text-align: center;
+  padding: 18px;
+  color: #445161;
+  background: #fff;
+  font-size: 40px;
+  line-height: 30px;
+}
+.buyItNow .buy_conts .buy_cont .buy_text {
+  color: #fff;
+  font-size: 14px;
+  line-height: 24px;
+  padding: 20px;
+}
+.buyItNow .buy_conts .buy_cont .buy_Btn {
+  border-radius: 4px;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 14px;
+  background: #fff;
+  color: #445161;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 18px;
+  display: block;
+  margin: 20px;
+  text-decoration: none;
+}
+footer {
+  padding: 50px;
+  background: #445161;
+}
+footer:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+footer .contactsHeader {
+  color: #445161;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 36px;
+  margin: 0 0 30px;
+  color: #fff;
+  text-align: center;
+}
+footer .contactsContent {
+  width: 785px;
+  margin: 0 auto;
+}
+footer .contactsContent:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+footer .contactsContent form {
+  float: left;
+}
+footer .contactsContent form input[type="text"],
+footer .contactsContent form textarea {
+  display: block;
+  width: 500px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 21px;
+  padding: 7px 5px;
+  box-sizing: border-box;
+  color: #445161;
+  font-size: 16px;
+  line-height: 24px;
+  outline: none;
+}
+footer .contactsContent form textarea {
+  font-family: inherit;
+  min-height: 170px;
+}
+footer .contactsContent form input[type="submit"] {
+  border-radius: 5px;
+  background-color: #fff;
+  width: 140px;
+  height: 40px;
+  text-align: center;
+  color: #445161;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  border: none;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  outline: none;
+}
+footer .contactsContent .contactsList {
+  float: right;
+}
+footer .contactsContent .contactsList > div:not(.socialIcons) {
+  margin-bottom: 15px;
+}
+footer .contactsContent .contactsList .skype,
+footer .contactsContent .contactsList .icq,
+footer .contactsContent .contactsList .email,
+footer .contactsContent .contactsList .phone {
+  padding-left: 30px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+}
+footer .contactsContent .contactsList .skype {
+  background: url("../img/skype_icon.png") no-repeat left center;
+}
+footer .contactsContent .contactsList .icq {
+  background: url("../img/icq_icon.png") no-repeat left center;
+}
+footer .contactsContent .contactsList .email {
+  background: url("../img/email_icon.png") no-repeat left center;
+}
+footer .contactsContent .contactsList .phone {
+  background: url("../img/phone_icon.png") no-repeat left center;
+}
+footer .contactsContent .contactsList .socialIcons {
+  font-family: SocialIco, sans-serif;
+  color: #fff;
+  font-size: 60px;
+  line-height: 44px;
+}
+.copy {
+  height: 26px;
+  text-align: center;
+  color: #445161;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  line-height: 26px;
+  background: #f5f5f5;
+}
