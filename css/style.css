@@ -2,9 +2,13 @@
   font-family: SocialIco;
   src: url("../font/Socialico.ttf");
 }
-* {
+*,
+*:before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  border: 0;
 }
 html,
 body {
@@ -12,9 +16,26 @@ body {
   height: 100%;
   font-family: Arial, sans-serif;
 }
-.conteiner {
+.container {
+  width: 100%;
   max-width: 1280px;
   margin: 0 auto;
+}
+@media (max-width: 1280px) {
+  .container {
+    max-width: 970px;
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    max-width: 750px;
+  }
+}
+@media (max-width: 767px) {
+  .container {
+    padding: 0;
+    max-width: none;
+  }
 }
 .prod {
   background-color: #445161;
@@ -44,6 +65,26 @@ body {
 .prod img {
   float: right;
 }
+@media (max-width: 1280px) {
+  .prod img {
+    width: 45%;
+  }
+}
+@media (max-width: 992px) {
+  .prod .prod_text {
+    width: 100%;
+  }
+  .prod img {
+    margin-top: 20px;
+    width: 100%;
+    float: none;
+  }
+}
+@media (max-width: 750px) {
+  .prod .prod_text h1 {
+    font-size: 2.5em;
+  }
+}
 .abo {
   background-color: #fff;
   padding: 50px;
@@ -54,7 +95,7 @@ body {
   display: block;
 }
 .abo .abo_text {
-  max-width: 710px;
+  width: 55.46875%;
   float: left;
 }
 .abo .abo_text h2 {
@@ -75,6 +116,27 @@ body {
   width: 430px;
   height: 245px;
   background-color: #445161;
+}
+@media (max-width: 1280px) {
+  .abo img {
+    width: 40%;
+  }
+}
+@media (max-width: 992px) {
+  .abo .abo_text {
+    width: 100%;
+  }
+  .abo img {
+    margin-top: 20px;
+    width: 100%;
+    height: 100%;
+    float: none;
+  }
+}
+@media (max-width: 750px) {
+  .abo .prod_text h1 {
+    font-size: 2.5em;
+  }
 }
 .dig {
   padding: 50px;
@@ -122,6 +184,29 @@ body {
 .dig li:nth-child(even) {
   margin-left: 8px;
 }
+@media (max-width: 992px) {
+  .dig li {
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .dig ul[li^="li"]:not(:nth-child(-n + 2)) {
+    margin-top: 15px;
+  }
+}
+@media (max-width: 991px) and (min-width: 0) {
+  .dig li:not(:first-child) {
+    margin: 15px 0 0 0;
+  }
+}
+@media (max-width: 479px) {
+  .dig li {
+    background-position: center top;
+    padding-top: 40px;
+    padding-left: 0;
+    text-align: left;
+  }
+}
 .scr {
   background: #fff;
   padding: 50px;
@@ -166,6 +251,21 @@ body {
   line-height: 24px;
   text-align: justify;
 }
+@media (max-width: 992px) {
+  .scr .scr_cont {
+    width: 100%;
+  }
+}
+@media (max-width: 991px) and (min-width: 0) {
+  .scr .scr_cont:not(:first-child) {
+    margin: 15px 0 0 0;
+  }
+}
+@media (max-width: 479px) {
+  .scr .scr_cont img {
+    float: none;
+  }
+}
 .rev {
   padding: 50px;
   background: #f5f5f5;
@@ -208,7 +308,7 @@ body {
   background-color: #ebebeb;
   position: relative;
   float: right;
-  width: 468px;
+  width: 80.4123%;
   padding: 16px;
   box-sizing: border-box;
   border-radius: 4px;
@@ -228,6 +328,43 @@ body {
   font-size: 14px;
   line-height: 18px;
 }
+@media (max-width: 1280px) {
+  .rev .rev_cont .rev_text {
+    width: 75%;
+  }
+}
+@media (max-width: 992px) {
+  .rev .rev_cont {
+    width: 100%;
+    float: none;
+  }
+  .rev .rev_cont Img {
+    float: none;
+    display: block;
+    margin: 0 auto 15px auto;
+  }
+  .rev .rev_cont .rev_text {
+    width: 100%;
+    float: none;
+  }
+}
+@media (max-width: 991px) and (min-width: 0) {
+  .rev .rev_cont:not(:first-child) {
+    margin-top: 15px;
+  }
+  .rev .rev_cont .rev_text {
+    margin-top: 30px;
+  }
+  .rev .rev_cont .rev_text::before {
+    top: -10px;
+    left: calc(50% - 10px);
+  }
+}
+@media (max-width: 479px) {
+  .rev .rev_cont .rev_text img {
+    float: none;
+  }
+}
 .buyItNow {
   background-color: #fff;
   padding: 50px;
@@ -246,14 +383,10 @@ body {
   text-align: center;
 }
 .buyItNow .buy_conts {
-  width: 990px;
-  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  flex-direction: column;
 }
 .buyItNow .buy_conts .buy_cont {
-  width: 298px;
   background: #445161;
   border-radius: 4px;
   border: 2px solid #445161;
@@ -296,6 +429,23 @@ body {
   margin: 20px;
   text-decoration: none;
 }
+@media (min-width: 992px) {
+  .buyItNow .buy_conts {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+@media (min-width: 992px) {
+  .buyItNow .buy_conts .buy_cont:not(:last-child) {
+    margin-right: 15px;
+  }
+}
+@media (max-width: 991px) {
+  .buyItNow .buy_conts .buy_cont:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
 footer {
   padding: 50px;
   background: #445161;
@@ -315,7 +465,7 @@ footer .contactsHeader {
   text-align: center;
 }
 footer .contactsContent {
-  width: 785px;
+  width: 66.52542373%;
   margin: 0 auto;
 }
 footer .contactsContent:after {
@@ -394,6 +544,38 @@ footer .contactsContent .contactsList .socialIcons {
   font-size: 60px;
   line-height: 44px;
 }
+@media (max-width: 1280px) {
+  footer .contactsContent {
+    width: 100%;
+  }
+}
+@media (max-width: 992px) {
+  footer .contactsContent form {
+    width: 100%;
+    display: contents;
+  }
+  footer .contactsContent form input[type="text"],
+  footer .contactsContent form textarea {
+    float: none;
+    width: 100%;
+  }
+  footer .contactsContent form input[type="text"] footer .contactsContent form,
+  footer .contactsContent form textarea footer .contactsContent form {
+    width: 100%;
+  }
+  footer .contactsContent form input[type="text"] footer .contactsContent form input[type="text"],
+  footer .contactsContent form textarea footer .contactsContent form input[type="text"],
+  footer .contactsContent form input[type="text"] footer .contactsContent form textarea,
+  footer .contactsContent form textarea footer .contactsContent form textarea {
+    width: 10px;
+  }
+  footer .contactsContent .contactsList {
+    clear: both;
+    float: none;
+    width: 100%;
+    margin-top: 15px;
+  }
+}
 .copy {
   height: 26px;
   text-align: center;
@@ -403,4 +585,15 @@ footer .contactsContent .contactsList .socialIcons {
   letter-spacing: 0.3px;
   line-height: 26px;
   background: #f5f5f5;
+}
+@media (max-width: 767px) and (min-width: 0) {
+  .prod,
+  .abo,
+  .dig,
+  .scr,
+  .rev,
+  .buyItNow,
+  footer {
+    padding: 15px;
+  }
 }
