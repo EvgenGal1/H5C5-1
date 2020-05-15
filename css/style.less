@@ -1,8 +1,12 @@
 @import "_variables";
 
-* {
+*,
+*:before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  border: 0;
 }
 
 html,
@@ -12,14 +16,33 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.conteiner {
+.container {
+  width: 100%;
   max-width: 1280px;
   margin: 0 auto;
+}
+@media (max-width: 1280px) {
+  .container {
+    max-width: 970px;
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    max-width: 750px;
+  }
+}
+@media (max-width: 767px) {
+  .container {
+    padding: 0;
+    max-width: none;
+  }
 }
 
 .prod {
   background-color: @darkColor;
   .padding-side();
+  //   display: inline-block;
+  //   width: 100%;
   .prod_text {
     display: inline-block;
     text-shadow: 0.5px 0.9px 0 rgba(0, 0, 0, 0.3);
@@ -36,8 +59,44 @@ body {
       line-height: 36px;
     }
   }
+
   img {
     float: right;
+  }
+
+  video {
+    width: 470px;
+    height: 215px;
+    float: right;
+  }
+}
+@media (max-width: 1280px) {
+  .prod img {
+    width: 45%;
+  }
+  .prod video {
+    width: 45%;
+  }
+}
+@media (max-width: 992px) {
+  .prod .prod_text {
+    width: 100%;
+  }
+  .prod img {
+    margin-top: 20px;
+    width: 100%;
+    float: none;
+  }
+  .prod video {
+    margin-top: 20px;
+    width: 100%;
+    height: 100%;
+    float: none;
+  }
+}
+@media (max-width: 750px) {
+  .prod .prod_text h1 {
+    font-size: 2.5em;
   }
 }
 
@@ -45,7 +104,7 @@ body {
   background-color: @lightColor;
   .padding-side();
   .abo_text {
-    max-width: 710px;
+    width: 55.46875%;
     float: left;
     h2 {
       .header();
@@ -59,9 +118,89 @@ body {
   }
   img {
     float: right;
-    width: 430px;
-    height: 245px;
     background-color: @darkColor;
+  }
+}
+#player {
+  float: right;
+  text-align: center;
+  padding: 10px 5px 5px 5px;
+  background: #445161;
+  border: 1px solid #989898;
+  border-radius: 10px;
+}
+#media {
+  height: 100%;
+}
+#play,
+#mute {
+  width: 47%;
+  padding: 2px 3px;
+  border: 1px solid #000000;
+  background: #f5f5f5;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+#nav_panel {
+  margin: 5px 0;
+  width: 100%;
+}
+
+#buttons {
+  float: left;
+  width: 23.255%;
+}
+
+#bar {
+  float: left;
+  width: 61.395%;
+  height: 16px;
+  margin: 2px 3px;
+  border: 1px solid #cccccc;
+  background: #eeeeee;
+}
+
+#progress {
+  width: 0;
+  height: 16px;
+  background: rgba(0, 0, 150, 0.2);
+}
+#volume {
+  width: 13%;
+}
+@media (max-width: 1280px) {
+  .abo img {
+    width: 40%;
+  }
+  #player {
+    width: 40%;
+  }
+  #media {
+    width: 100%;
+  }
+}
+@media (max-width: 992px) {
+  .abo .abo_text {
+    width: 100%;
+  }
+  .abo img {
+    margin-top: 20px;
+    width: 100%;
+    float: none;
+  }
+  .abo #player {
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+@media (max-width: 750px) {
+  .abo .prod_text h1 {
+    font-size: 2.5em;
+  }
+  #play,
+  #mute {
+    font-size: 10px;
   }
 }
 
@@ -84,6 +223,7 @@ body {
     float: left;
     background: url(../img/plus_icon.gif) no-repeat left 5px;
     padding-left: 40px;
+    //  padding: 0px 15px 0px 55px;
     box-sizing: border-box;
     text-align: justify;
     margin-top: 35px;
@@ -97,6 +237,31 @@ body {
     &:nth-child(even) {
       margin-left: 8px;
     }
+  }
+}
+@media (max-width: 992px) {
+  .dig li {
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .dig ul[li^="li"]:not(:nth-child(-n + 2)) {
+    margin-top: 15px;
+  }
+}
+//по идее в классе .dig есть ul в котор выражение li начинающиеся (^) с "li" должно применить ко всем (nth-child) кроме первых двух (-n + 2) вывод (margin-top: 45px;)
+// но что то не работает. из-зи [этих] скобок скорее, так как они для класса. другие варианты тоже не пошли
+@media (max-width: 991px) and (min-width: 0) {
+  .dig li:not(:first-child) {
+    margin: 15px 0 0 0;
+  }
+}
+@media (max-width: 479px) {
+  .dig li {
+    background-position: center top;
+    padding-top: 40px;
+    padding-left: 0;
+    text-align: left;
   }
 }
 
@@ -135,6 +300,23 @@ body {
     }
   }
 }
+@media (max-width: 992px) {
+  .scr .scr_cont {
+    width: 100%;
+  }
+}
+@media (max-width: 991px) and (min-width: 0) {
+  .scr .scr_cont:not(:first-child) {
+    margin: 15px 0 0 0;
+  }
+}
+@media (max-width: 479px) {
+  .scr .scr_cont img {
+    float: none;
+    display: block;
+    margin: 0 auto 15px auto;
+  }
+}
 
 .rev {
   .padding-side();
@@ -167,7 +349,7 @@ body {
       background-color: @section2Color;
       position: relative;
       float: right;
-      width: 468px;
+      width: 80.4123%;
       padding: 16px;
       box-sizing: border-box;
       border-radius: 4px;
@@ -189,6 +371,47 @@ body {
     }
   }
 }
+@media (max-width: 1280px) {
+  .rev .rev_cont .rev_text {
+    width: 75%;
+  }
+}
+@media (max-width: 992px) {
+  .rev .rev_cont {
+    width: 100%;
+    float: none;
+  }
+  .rev .rev_cont Img {
+    float: none;
+    display: block;
+    margin: 0 auto 15px auto;
+  }
+  .rev .rev_cont .rev_text {
+    width: 100%;
+    float: none;
+  }
+}
+@media (max-width: 991px) and (min-width: 0) {
+  .rev .rev_cont:not(:first-child) {
+    margin-top: 15px;
+  }
+  .rev .rev_cont .rev_text {
+    margin-top: 30px;
+  }
+  .rev .rev_cont .rev_text::before {
+    top: -10px;
+    left: calc(50% - 10px);
+  }
+}
+@media (max-width: 479px) {
+  .rev .rev_cont .rev_text img {
+    float: none;
+  }
+}
+// @media (max-width: 992px) {
+//   .rev .rev_cont .rev_text {
+//   }
+// }
 
 .buyItNow {
   background-color: @lightColor;
@@ -198,13 +421,9 @@ body {
     text-align: center;
   }
   .buy_conts {
-    width: 990px;
-    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    flex-direction: column;
     .buy_cont {
-      width: 298px;
       background: @darkColor;
       border-radius: 4px;
       border: 2px solid @darkColor;
@@ -250,6 +469,24 @@ body {
   }
 }
 
+@media (min-width: 992px) {
+  .buyItNow .buy_conts {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+@media (min-width: 992px) {
+  .buyItNow .buy_conts .buy_cont:not(:last-child) {
+    margin-right: 15px;
+  }
+}
+@media (max-width: 991px) {
+  .buyItNow .buy_conts .buy_cont:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
 footer {
   .padding-side();
   background: @darkColor;
@@ -261,7 +498,7 @@ footer {
   }
 
   .contactsContent {
-    width: 785px;
+    width: 66.5254237288%;
     margin: 0 auto;
 
     .after();
@@ -269,7 +506,9 @@ footer {
     form {
       float: left;
 
-      input[type="text"],
+      input[type="email"],
+      input[type="name"],
+      input[type="date"],
       textarea {
         display: block;
         width: 500px;
@@ -350,6 +589,30 @@ footer {
     }
   }
 }
+@media (max-width: 1280px) {
+  footer .contactsContent {
+    width: 100%;
+  }
+}
+@media (max-width: 992px) {
+  footer .contactsContent form {
+    width: 100%;
+    display: contents;
+  }
+  footer .contactsContent form input[type="name"],
+  footer .contactsContent form input[type="email"],
+  footer .contactsContent form input[type="date"],
+  footer .contactsContent form textarea {
+    float: none;
+    width: 100%;
+  }
+  footer .contactsContent .contactsList {
+    clear: both;
+    float: none;
+    width: 100%;
+    margin-top: 15px;
+  }
+}
 
 .copy {
   height: 26px;
@@ -360,4 +623,37 @@ footer {
   letter-spacing: 0.3px;
   line-height: 26px;
   background: @section1Color;
+}
+@media (max-width: 1280px) and (min-width: 0) {
+  .prod,
+  .abo,
+  .dig,
+  .scr,
+  .rev,
+  .buyItNow,
+  footer {
+    padding: 40px;
+  }
+}
+@media (max-width: 992px) and (min-width: 0) {
+  .prod,
+  .abo,
+  .dig,
+  .scr,
+  .rev,
+  .buyItNow,
+  footer {
+    padding: 30px;
+  }
+}
+@media (max-width: 767px) and (min-width: 0) {
+  .prod,
+  .abo,
+  .dig,
+  .scr,
+  .rev,
+  .buyItNow,
+  footer {
+    padding: 15px;
+  }
 }
