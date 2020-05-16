@@ -261,7 +261,6 @@ body {
     background-position: center top;
     padding-top: 40px;
     padding-left: 0;
-    text-align: left;
   }
 }
 
@@ -507,7 +506,7 @@ footer {
       float: left;
 
       input[type="email"],
-      input[type="name"],
+      input[type="text"],
       input[type="date"],
       textarea {
         display: block;
@@ -599,7 +598,7 @@ footer {
     width: 100%;
     display: contents;
   }
-  footer .contactsContent form input[type="name"],
+  footer .contactsContent form input[type="text"],
   footer .contactsContent form input[type="email"],
   footer .contactsContent form input[type="date"],
   footer .contactsContent form textarea {
@@ -609,8 +608,14 @@ footer {
   footer .contactsContent .contactsList {
     clear: both;
     float: none;
-    width: 100%;
-    margin-top: 15px;
+    display: block;
+    width: 40%;
+    margin: 15px auto 0 auto;
+  }
+}
+@media (max-width: 479px) {
+  footer .contactsContent .contactsList .socialIcons {
+    font-size: 50px;
   }
 }
 
